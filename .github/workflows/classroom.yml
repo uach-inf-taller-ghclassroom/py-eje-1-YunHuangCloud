@@ -13,8 +13,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: test_main
-      id: test_main
+    - name: test_sumar
+      id: test_sumar
       uses: classroom-resources/autograding-python-grader@v1
       with:
         timeout: 1
@@ -23,6 +23,6 @@ jobs:
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST_MAIN_RESULTS: "${{steps.test_main.outputs.result}}"
+        TEST_SUMAR_RESULTS: "${{steps.test_sumar.outputs.result}}"
       with:
-        runners: test_main
+        runners: test_sumar
